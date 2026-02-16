@@ -1,0 +1,201 @@
+# # metadata:
+# #   description: "Prompts for generating code"
+# #   version: "1.0.0"
+# #   author: "Classroom CLI Agent"
+# #   task_type: "code_generation"
+
+# # variants:
+# #   default:
+# #     description: "Standard code generation prompt"
+# #     template: |
+# #       You are a software engineer. Write a single Python module that satisfies the description.
+# #       Follow the plan.
+# #       Return ONLY the full module content.
+# #       Rules:
+# #       - Output raw Python only
+# #       - No Markdown
+# #       - No code fences
+# #       - No explanations
+
+# #       TARGET MODULE PATH: {module_path}
+
+# #       PLAN:
+# #       {plan}
+
+# #       DESCRIPTION:
+# #       {desc}
+
+# #   documented:
+# #     description: "Generate well-documented code"
+# #     template: |
+# #       You are a senior software engineer. Create a well-documented Python module.
+      
+# #       Path: {module_path}
+      
+# #       Implementation Plan:
+# #       {plan}
+      
+# #       Requirements:
+# #       {desc}
+      
+# #       Standards:
+# #       - Comprehensive docstrings (Google style)
+# #       - Type hints for all functions
+# #       - Inline comments for complex logic
+# #       - Clear variable names
+# #       - Return ONLY raw Python code
+# #       - No markdown formatting
+
+# #   minimal:
+# #     description: "Generate minimal, concise code"
+# #     template: |
+# #       Write minimal Python code for: {desc}
+      
+# #       Follow this plan:
+# #       {plan}
+      
+# #       Target: {module_path}
+      
+# #       Rules: Raw Python only, no comments unless critical, no markdown.
+# metadata:
+#   description: "Prompts for generating code in any language"
+#   version: "1.1.0"
+#   author: "Classroom CLI Agent"
+#   task_type: "code_generation"
+
+# variants:
+#   default:
+#     description: "Standard code generation prompt"
+#     template: |
+#       You are an expert Polyglot Software Engineer. Write a single source file in {language} that satisfies the description.
+#       Follow the plan strictly.
+#       Return ONLY the full file content.
+      
+#       Rules:
+#       - Output raw code only
+#       - No Markdown formatting (no backticks)
+#       - No code fences
+#       - No conversational text or explanations
+#       - Follow standard conventions for {language}
+
+#       TARGET FILE PATH: {module_path}
+
+#       PLAN:
+#       {plan}
+
+#       DESCRIPTION:
+#       {desc}
+
+#   documented:
+#     description: "Generate well-documented code"
+#     template: |
+#       You are a Senior Software Engineer. Create a production-ready, well-documented source file in {language}.
+      
+#       Path: {module_path}
+      
+#       Implementation Plan:
+#       {plan}
+      
+#       Requirements:
+#       {desc}
+      
+#       Standards:
+#       - Comprehensive documentation (e.g., Docstrings for Python, JSDoc for JS/TS, GoDoc for Go)
+#       - Proper type definitions/hints where applicable
+#       - Inline comments for complex logic
+#       - Semantic variable naming
+#       - Return ONLY raw code
+#       - No markdown formatting
+
+#   minimal:
+#     description: "Generate minimal, concise code"
+#     template: |
+#       Write minimal {language} code for: {desc}
+      
+#       Follow this plan:
+#       {plan}
+      
+#       Target: {module_path}
+      
+#       Rules: Raw code only, no comments unless critical, no markdown. 
+
+metadata:
+  description: "Prompts for generating code in any language"
+  version: "1.2.0"
+  author: "Classroom CLI Agent"
+  task_type: "code_generation"
+
+variants:
+  default:
+    description: "Standard code generation prompt"
+    template: |
+      You are an expert Polyglot Software Engineer. Write a single source file in {language} that satisfies the description.
+      Follow the plan strictly.
+      Return ONLY the full file content.
+      
+      Rules:
+      - Output raw code only
+      - No Markdown formatting (no backticks)
+      - No code fences
+      - No conversational text or explanations
+      - Follow standard conventions for {language}
+
+      TARGET FILE PATH: {module_path}
+
+      PLAN:
+      {plan}
+
+      DESCRIPTION:
+      {desc}
+
+  documented:
+    description: "Generate well-documented code"
+    template: |
+      You are a Senior Software Engineer. Create a production-ready, well-documented source file in {language}.
+      
+      Path: {module_path}
+      
+      Implementation Plan:
+      {plan}
+      
+      Requirements:
+      {desc}
+      
+      Standards:
+      - Comprehensive documentation (e.g., Docstrings for Python, JSDoc for JS/TS, GoDoc for Go)
+      - Proper type definitions/hints where applicable
+      - Inline comments for complex logic
+      - Semantic variable naming
+      - Return ONLY raw code
+      - No markdown formatting
+
+  minimal:
+    description: "Generate minimal, concise code"
+    template: |
+      Write minimal {language} code for: {desc}
+      
+      Follow this plan:
+      {plan}
+      
+      Target: {module_path}
+      
+      Rules: Raw code only, no comments unless critical, no markdown.
+
+  scaffold:
+    description: "Generate a multi-file project structure (JSON)"
+    template: |
+      You are a Project Scaffolding Agent. Your job is to generate the complete codebase for a {language} project.
+      
+      Instructions:
+      1. Return a valid JSON object.
+      2. The keys must be the filenames (e.g., "main.py", "requirements.txt", "README.md").
+      3. The values must be the file contents (strings).
+      4. Include configuration files and a README.md.
+      5. DO NOT wrap the output in markdown code blocks (no ```json).
+      6. Return ONLY the raw JSON string.
+      
+      Project Description:
+      {desc}
+      
+      Implementation Plan:
+      {plan}

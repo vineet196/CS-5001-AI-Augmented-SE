@@ -1,0 +1,107 @@
+# # metadata:
+# #   description: "Prompts for creating implementation plans"
+# #   version: "1.0.0"
+# #   author: "Classroom CLI Agent"
+# #   task_type: "planning"
+
+# # variants:
+# #   default:
+# #     description: "Standard planning prompt for code generation"
+# #     template: |
+# #       You are a senior software engineer. Create a short, actionable implementation plan with ordered steps.
+      
+# #       Constraints:
+# #       - Keep the solution minimal and readable
+# #       - Assume standard library only unless the description requires otherwise
+# #       - Do not write code yet
+# #       - Output plain text only
+
+# #       TARGET MODULE PATH: {module_path}
+
+# #       DESCRIPTION:
+# #       {desc}
+
+# #   detailed:
+# #     description: "More detailed planning with architecture considerations"
+# #     template: |
+# #       You are a senior software architect. Create a comprehensive implementation plan.
+      
+# #       TARGET MODULE PATH: {module_path}
+      
+# #       REQUIREMENTS:
+# #       {desc}
+      
+# #       Your plan should include:
+# #       1. Architecture overview
+# #       2. Key components and their responsibilities
+# #       3. Data structures needed
+# #       4. Function signatures
+# #       5. Dependencies (prefer standard library)
+# #       6. Edge cases to handle
+# #       7. Testing considerations
+      
+# #       Output as numbered steps in plain text.
+
+# #   minimal:
+# #     description: "Quick planning for simple tasks"
+# #     template: |
+# #       Create a brief plan (3-5 steps) for implementing:
+# #       {desc}
+      
+# #       Target file: {module_path}
+      
+# #       Keep it simple and actionable.
+metadata:
+  description: "Prompts for creating implementation plans"
+  version: "1.1.0"
+  author: "Classroom CLI Agent"
+  task_type: "planning"
+
+variants:
+  default:
+    description: "Standard planning prompt for code generation"
+    template: |
+      You are a Senior Software Engineer. Create a short, actionable implementation plan with ordered steps for a {language} project.
+      
+      Constraints:
+      - Keep the solution minimal and readable
+      - Prefer standard libraries, but specify external packages (e.g., npm, pip) if required by the description
+      - Do not write code yet
+      - Output plain text only
+
+      TARGET FILE PATH: {module_path}
+
+      DESCRIPTION:
+      {desc}
+
+  detailed:
+    description: "More detailed planning with architecture considerations"
+    template: |
+      You are a Senior Software Architect. Create a comprehensive implementation plan for this {language} module.
+      
+      TARGET FILE PATH: {module_path}
+      
+      REQUIREMENTS:
+      {desc}
+      
+      Your plan should include:
+      1. Architecture overview
+      2. Key components and their responsibilities
+      3. Data structures/Models needed
+      4. Function/Method signatures
+      5. Dependencies (standard library vs external packages)
+      6. Edge cases to handle
+      7. Testing considerations
+      
+      Output as numbered steps in plain text.
+
+  minimal:
+    description: "Quick planning for simple tasks"
+    template: |
+      Create a brief plan (3-5 steps) for implementing:
+      {desc}
+      
+      Target file: {module_path}
+      Language: {language}
+      
+      Keep it simple and actionable.

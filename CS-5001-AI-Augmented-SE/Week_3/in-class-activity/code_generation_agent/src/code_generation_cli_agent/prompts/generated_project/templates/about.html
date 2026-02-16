@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>About This Application</h1>
+<p>This is a basic Flask to-do application built to demonstrate Flask's routing and templating capabilities.</p>
+<p>Features include:</p>
+<ul>
+    <li>Add new to-do items</li>
+    <li>Mark items as complete</li>
+    <li>Simple navigation between pages</li>
+    <li>Basic styling with CSS</li>
+</ul>
+<p><a href="{{ url_for('index') }}">Back to Home</a></p>
+{% endblock %}
