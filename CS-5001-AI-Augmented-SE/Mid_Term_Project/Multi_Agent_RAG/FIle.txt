@@ -1,0 +1,8 @@
+multi_agent_rag/
+├── agents/
+│   ├── sql_agent.py          # Agent 1: Structured Queries
+│   ├── semantic_agent.py     # Agent 2: Unstructured Data
+│   ├── web_agent.py          # Agent 3: Real-time Info
+│   └── recommend_agent.py    # Agent 4: Personalization
+├── .env                      # API Keys and Credentials
+└── app.py                    # Master Agent (Orchestrator)
