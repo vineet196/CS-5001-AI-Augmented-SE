@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: github-agent
+Version: 0.1.0
+Summary: Multi-agent GitHub assistant: review diffs, draft issues/PRs, improve existing items.
+Requires-Python: >=3.10
+Requires-Dist: typer[all]>=0.9.0
+Requires-Dist: openai>=1.0.0
+Requires-Dist: PyGithub>=2.1.0
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: rich>=13.0.0
